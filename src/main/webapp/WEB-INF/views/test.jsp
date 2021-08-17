@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/agape_Web/test/get.do" method="get">
+<form action="/test/get.do" method="get">
     <h3>Form 데이터 GET방식</h3>
     <input type="text" name="data" />
     <button>제출</button>
@@ -31,7 +31,7 @@
             <c:forEach varStatus="i" var="item" items="${itemList}">
                 <li class="data">
                     <p style="display: inline">${item.data}</p>
-                    <button onclick="location.href='/delete.do?number=${item.number}'">삭제</button>
+                    <button onclick="location.href='/test/delete.do?number=${item.number}'">삭제</button>
                 </li>
             </c:forEach>
         </ul>

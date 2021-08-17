@@ -44,7 +44,7 @@ public class TestController {
         return "test";
     }
 
-    @RequestMapping(value = "/agape_Web/test/get.do", method = RequestMethod.GET)
+    @RequestMapping(value = "/test/get.do", method = RequestMethod.GET)
     public String get(@RequestParam(value = "data") String data){
         try{
             System.out.println("controller: " + data);

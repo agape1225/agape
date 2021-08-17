@@ -43,7 +43,7 @@ public class adminLoginInterceptor extends HandlerInterceptorAdapter {
         } else {
             System.out.println("session is null");
         }
-        response.sendRedirect("/agape_Web/admin/login");
+        response.sendRedirect("/admin/login");
         return false;
     }
 }
