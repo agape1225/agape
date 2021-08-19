@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<h6>Test Main Page.</h6>
+<h6>Hello, World</h6>
 </body>
 </html>

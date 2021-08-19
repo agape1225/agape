@@ -19,8 +19,8 @@
 
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/agape_Web/admin/**" />
-            <mvc:exclude-mapping path="/agape_Web/admin/login/**"/>
+            <mvc:mapping path="/admin/**" />
+            <mvc:exclude-mapping path="/admin/login/**"/>
             <bean class="com.test.controller.adminLoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
