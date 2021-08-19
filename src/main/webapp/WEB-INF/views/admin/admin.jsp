@@ -13,5 +13,8 @@
 </head>
 <body>
 <h1> admin </h1>
+<form action="/admin/create_activities">
+    <button>강의 추가</button>
+</form>
 </body>
 </html>
