@@ -32,8 +32,7 @@ public class ActivitiesController {
 
     @RequestMapping(value = "/admin/create_activities/insert_activities.do", method = RequestMethod.POST)
     public String insert_activities(Model model,
-                                    ActivitiesDto aDto/*,
-                                    @RequestParam("poster") MultipartFile file*/){
+                                    ActivitiesDto aDto){
         try{
 
             System.out.println("Start insert_activities");
