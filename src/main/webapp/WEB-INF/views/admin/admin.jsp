@@ -16,5 +16,19 @@
 <form action="/admin/create_activities">
     <button>강의 추가</button>
 </form>
+<%--<img src="resources\activities_poster\4기 성창규 프로필사진.jpg">--%>
+<div class="dataList">
+    <div class="data">
+        <ul>
+            <c:forEach varStatus="i" var="item" items="${activities}">
+                <li class="data">
+                    <p style="display: inline">${item.name}</p>
+                    <img src="${item.poster}">
+                    <button onclick="location.href='/test/delete.do?number=${item.num}'">삭제</button>
+                </li>
+            </c:forEach>
+        </ul>
+    </div>
+</div>
 </body>
 </html>

@@ -1,6 +1,8 @@
 package com.test.controller;
 
 import com.test.dto.ActivitiesDto;
+import com.test.dto.ActivitiesDto_DB;
+import com.test.service.activities.ActivitiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +15,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletContext;
 import java.io.File;
+import java.util.ArrayList;
 
 @Controller
 public class ActivitiesController {
+
+    @Autowired
+    ActivitiesService activitiesService;
 
     @Autowired
     ServletContext servletContext;
@@ -23,6 +29,8 @@ public class ActivitiesController {
     @GetMapping("/admin/create_activities")
     public String create_activities(Model model){
         try{
+
+
 
         }catch (Exception e){
             e.printStackTrace();
@@ -45,9 +53,12 @@ public class ActivitiesController {
             System.out.println(aDto.getHost());
 
             String webappRoot = servletContext.getRealPath("/");
-            String relativeFolder =  "resources" + File.separator + "activities_poster" + File.separator;
-            String filename = webappRoot + relativeFolder + (aDto.getPoster()).getOriginalFilename();
+            String relativeFolder =  "resources" + File.separator + "activities_poster" + File.separator + (aDto.getPoster()).getOriginalFilename();
+            String filename = webappRoot + relativeFolder;
             FileCopyUtils.copy((aDto.getPoster()).getBytes(), new File(filename));
+
+            activitiesService.addActivities(aDto.getName(), aDto.getCategory(), aDto.getTarget(),
+                    aDto.getDate(), aDto.getLink(), relativeFolder, aDto.getBenefits(), aDto.getHost());
 
             System.out.println(filename);
             System.out.println("End insert_activities");

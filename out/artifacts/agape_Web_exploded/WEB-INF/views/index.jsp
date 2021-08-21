@@ -12,5 +12,7 @@
 </head>
 <body>
 <h6>Hello, World</h6>
+<img src="resources\activities_poster\test.jpg">
+
 </body>
 </html>

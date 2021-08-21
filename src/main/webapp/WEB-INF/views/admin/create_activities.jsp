@@ -24,6 +24,7 @@
     주최기관: <input type="text" name="host" /><br>
     포스터: <input type="file" name="poster" /><br>
     <button>제출</button>
+
 </form>
 </body>
 </html>
