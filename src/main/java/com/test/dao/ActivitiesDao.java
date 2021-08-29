@@ -45,4 +45,18 @@ public class ActivitiesDao {
         }
     }
 
+    public void deleteActivities(String number){
+        try{
+
+            System.out.println("start deleteActivities Dao");
+            ActivitiesMapper activitiesMapper = sqlSession.getMapper(ActivitiesMapper.class);
+            System.out.println("end deleteActivities Dao");
+
+            activitiesMapper.deleteActivities(number);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }

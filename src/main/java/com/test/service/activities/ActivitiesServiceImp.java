@@ -24,4 +24,9 @@ public class ActivitiesServiceImp implements ActivitiesService {
     public ArrayList<ActivitiesDto_DB> getActivities() {
         return activitiesDao.getActivities();
     }
+
+    @Override
+    public void deleteActivities(String number) {
+        activitiesDao.deleteActivities(number);
+    }
 }

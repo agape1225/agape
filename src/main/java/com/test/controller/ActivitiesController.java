@@ -38,6 +38,17 @@ public class ActivitiesController {
         return "admin/create_activities";
     }
 
+    @RequestMapping(value = "/admin/delete_activities.do", method = RequestMethod.GET)
+    public String delete(@RequestParam(value = "number") String number){
+        try{
+            System.out.println("number: " + number);
+            activitiesService.deleteActivities(number);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "redirect:/admin";
+    }
+
     @RequestMapping(value = "/admin/create_activities/insert_activities.do", method = RequestMethod.POST)
     public String insert_activities(Model model,
                                     ActivitiesDto aDto){
@@ -66,6 +77,6 @@ public class ActivitiesController {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return "admin/create_activities";
+        return "redirect:/admin";
     }
 }

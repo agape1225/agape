@@ -14,4 +14,8 @@
         select * from activities
     </select>
 
+    <delete id="deleteActivities">
+        delete from activities where num=${number}
+    </delete>
+
 </mapper>

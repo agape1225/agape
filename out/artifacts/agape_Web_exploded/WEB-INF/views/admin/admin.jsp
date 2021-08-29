@@ -24,7 +24,7 @@
                 <li class="data">
                     <p style="display: inline">${item.name}</p>
                     <img src="${item.poster}">
-                    <button onclick="location.href='/test/delete.do?number=${item.num}'">삭제</button>
+                    <button onclick="location.href='/admin/delete_activities.do?number=${item.num}'">삭제</button>
                 </li>
             </c:forEach>
         </ul>

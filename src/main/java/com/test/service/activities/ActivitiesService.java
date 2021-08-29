@@ -8,4 +8,6 @@ public interface ActivitiesService {
     void addActivities(String name, String category, String target, String date,
                        String link, String poster, String benefits, String host);
     ArrayList<ActivitiesDto_DB> getActivities();
+
+    void deleteActivities(String number);
 }

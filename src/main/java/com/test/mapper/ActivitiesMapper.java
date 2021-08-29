@@ -10,5 +10,8 @@ public interface ActivitiesMapper {
                        @Param("target") String target, @Param("date")String date,
                        @Param("link") String link, @Param("poster") String poster,
                        @Param("benefits") String benefits, @Param("host") String host);
+
     ArrayList<ActivitiesDto_DB> getActivities();
+
+    void deleteActivities(@Param("number") String number);
 }
