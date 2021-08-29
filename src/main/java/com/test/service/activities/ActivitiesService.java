@@ -10,4 +10,8 @@ public interface ActivitiesService {
     ArrayList<ActivitiesDto_DB> getActivities();
 
     void deleteActivities(String number);
+
+    void updateActivities(String name, String category, String target, String date,
+                          String link, String poster, String benefits, String host,
+                          String num);
 }

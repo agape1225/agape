@@ -29,4 +29,13 @@ public class ActivitiesServiceImp implements ActivitiesService {
     public void deleteActivities(String number) {
         activitiesDao.deleteActivities(number);
     }
+
+    @Override
+    public void updateActivities(String name, String category, String target, String date,
+                                 String link, String poster, String benefits, String host,
+                                 String num) {
+
+        activitiesDao.updateActivities(name, category, target, date, link, poster, benefits, host, num);
+
+    }
 }

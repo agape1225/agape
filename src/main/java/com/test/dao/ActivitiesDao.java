@@ -36,7 +36,6 @@ public class ActivitiesDao {
             System.out.println("start addActivities Dao");
             ActivitiesMapper activitiesMapper = sqlSession.getMapper(ActivitiesMapper.class);
             System.out.println("end addActivities Dao");
-
             return activitiesMapper.getActivities();
 
         }catch (Exception e){
@@ -59,4 +58,17 @@ public class ActivitiesDao {
         }
     }
 
+    public void updateActivities(String name, String category, String target, String date,
+                                 String link, String poster, String benefits, String host, String num){
+        try{
+
+            System.out.println("start deleteActivities Dao");
+            ActivitiesMapper activitiesMapper = sqlSession.getMapper(ActivitiesMapper.class);
+            activitiesMapper.updateActivities(name, category, target, date, link, poster, benefits, host, num);
+            System.out.println("end deleteActivities Dao");
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

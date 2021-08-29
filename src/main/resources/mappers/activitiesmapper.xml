@@ -18,4 +18,11 @@
         delete from activities where num=${number}
     </delete>
 
+    <update id="updateActivities">
+        update activities
+        set name=#{name}, category=#{category}, target=#{target}, date=#{date},
+        link=#{link}, poster=#{poster}, benefits=#{benefits}, host=#{host}
+        where num = #{num}
+    </update>
+
 </mapper>
