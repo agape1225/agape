@@ -1,7 +1,9 @@
 package com.test.controller;
 
+import com.test.dto.ActivitiesDto_DB;
 import com.test.dto.AdminLoginDto;
 import com.test.dto.TestDto;
+import com.test.service.activities.ActivitiesService;
 import com.test.service.adminLogin.AdminLoginService;
 import com.test.service.test.TestService;
 import com.test.util.firebase.FirebaseMessagingSnippets;
@@ -26,10 +28,15 @@ public class AdminController {
     AdminLoginService adminLoginService;
     @Autowired
     FirebaseMessagingSnippets firebaseMessagingSnippets;
+    @Autowired
+    ActivitiesService activitiesService;
 
     @GetMapping("/admin")
     public String admin_main(Model model){
         try{
+
+            ArrayList<ActivitiesDto_DB> activities = activitiesService.getActivities();
+            model.addAttribute("activities", activities);
 
         }catch (Exception e){
             e.printStackTrace();

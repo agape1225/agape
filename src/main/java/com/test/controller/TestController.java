@@ -1,6 +1,8 @@
 package com.test.controller;
 
+import com.test.dto.ActivitiesDto_DB;
 import com.test.dto.TestDto;
+import com.test.service.activities.ActivitiesService;
 import com.test.service.test.TestService;
 import com.test.util.firebase.FirebaseMessagingSnippets;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +23,15 @@ public class TestController {
     TestService testService;
     @Autowired
     FirebaseMessagingSnippets firebaseMessagingSnippets;
+    @Autowired
+    ActivitiesService activitiesService;
 
     @GetMapping("/")
     public String main(Model model){
         try{
+
+            ArrayList<ActivitiesDto_DB> activities = activitiesService.getActivities();
+            model.addAttribute("activities", activities);
 
         }catch (Exception e){
             e.printStackTrace();
