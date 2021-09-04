@@ -18,7 +18,7 @@
     <title>Title</title>
 </head>
 <body>
-<h6>Hello, World</h6>
+<h6>main page</h6>
 
 <div class="dataList">
     <div class="data">
@@ -32,6 +32,5 @@
         </ul>
     </div>
 </div>
-
 </body>
 </html>
